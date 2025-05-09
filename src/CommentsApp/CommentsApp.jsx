@@ -38,48 +38,72 @@ const CommentsApp = () => {
   };
   return (
     <>
-      <div style={{ borderBottom: "1px solid grey" }}>
-        <TotalContainer>
-          <div style={{ height: "400px", width: "330px" }}>
-            <div
-              style={{ display: "flex", gap: "10px", flexDirection: "column" }}
-            >
-              <HeadingStyles>Comments</HeadingStyles>
-              <ParagraphStyles>say more about 4.0 technologies</ParagraphStyles>
-            </div>
+      <div>
+        <div style={{ borderBottom: "1px solid grey" }}>
+          <TotalContainer>
+            <div style={{ height: "400px", width: "330px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "10px",
+                  flexDirection: "column",
+                }}
+              >
+                <HeadingStyles>Comments</HeadingStyles>
+                <ParagraphStyles>
+                  say more about 4.0 technologies
+                </ParagraphStyles>
+              </div>
 
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-            >
-              <NameInputElement
-                type={"text"}
-                placeholder={"Enter Name"}
-                onChange={nameInputFunction}
-              />
-              <CommentInputElement
-                type={"text"}
-                placeholder={"Enter Comment"}
-                onChange={nameCommentFunction}
-                onKeyDown={keyfunction}
-              />
-              <ButtonElement onClick={clickFunc}>Add Comment</ButtonElement>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px",
+                }}
+              >
+                <NameInputElement
+                  type={"text"}
+                  placeholder={"Enter Name"}
+                  onChange={nameInputFunction}
+                />
+                <CommentInputElement
+                  type={"text"}
+                  placeholder={"Enter Comment"}
+                  onChange={nameCommentFunction}
+                  onKeyDown={keyfunction}
+                />
+                <ButtonElement onClick={clickFunc}>Add Comment</ButtonElement>
+              </div>
             </div>
-          </div>
-          <div style={{ height: "300px", width: "330px" }}>
-            <ImagesStyles
-              src={
-                "https://assets.ccbp.in/frontend/react-js/comments-app/comments-img.png"
-              }
-            />
-          </div>
-        </TotalContainer>
+            <div style={{ height: "300px", width: "330px" }}>
+              <ImagesStyles
+                src={
+                  "https://assets.ccbp.in/frontend/react-js/comments-app/comments-img.png"
+                }
+              />
+            </div>
+          </TotalContainer>
+        </div>
       </div>
-      <ButtonElement>{data.length}</ButtonElement>
-      <div> Comments</div>
-      {data.map((object,index,array) => (
-  <CommentsItem  propName={object} index={index} fullarray={array}/>
-))}
-     
+
+      <div style={{ height: "200px" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "10px",
+            marginTop: "10px",
+          }}
+        >
+          <ButtonElement>{data.length}</ButtonElement>
+          <div>Comments</div>
+        
+      </div>
+      {data.map((object, index, array) => (
+            <CommentsItem propName={object} index={index} fullarray={array} setdata={setdata} />
+          ))}
+        </div>
     </>
   );
 };

@@ -59,6 +59,6 @@ export const ButtonElement=styled.div`
     text-align: center;
     background-color: blue;
     height: 25px;
-    width: 110px;
+    width: 100px;
     
 `
